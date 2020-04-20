@@ -24,19 +24,20 @@ def myNetwork():
     info( '*** Add switches\n')
     
     #   CREATES GLOBAL HOST r1
-    r1 = net.addHost('r1', cls=Node, ip='0.0.0.0')
+    r1 = net.addHost('r1', cls=Node, ip='172.16.1.1/24')
     #   IP FORWARDING
     r1.cmd('sysctl -w net.ipv4.ip_forward=1')
 
     #   ADDS HOSTS TO INTERACT
     info( '*** Add hosts\n')
-    h2 = net.addHost('h2', cls=Host, ip='10.0.0.2', defaultRoute=None)
-    h1 = net.addHost('h1', cls=Host, ip='10.0.0.1', defaultRoute=None)
-    
+    h1 = net.addHost( 'h1',ip='172.16.1.100/24',defaultRoute='via 172.16.1.1' )
+    h2 = net.addHost( 'h2',ip='10.0.0.100/24',defaultRoute='via 10.0.0.1' )
+
     #   ADDS LINKS TO h1 & h2
     info( '*** Add links\n')
-    net.addLink(h1, r1 intName2=)
-    net.addLink(h2, r1)
+   net.addLink(h1,r1,intfName2='r1-eth1',params2={ 'ip' :'172.16.1.1/24' })
+    net.addLink(h2, r1,intfName2='r1-eth2',params2={ 'ip' : '10.0.0.1/24' })
+
 
     info( '*** Starting network\n')
     net.build()
