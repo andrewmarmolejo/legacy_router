@@ -1,5 +1,14 @@
-#!/usr/bin/python
-# File: legacy_router.py
+####################################################
+##
+##
+## legacy_router.py
+## 03/19/2020
+##
+## Andrew Marmolejo
+## Kailun Yang
+##
+##
+####################################################
 
 ###     IMPORTS
 from mininet.net import Mininet
