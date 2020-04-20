@@ -35,7 +35,7 @@ def myNetwork():
     
     #   ADDS LINKS TO h1 & h2
     info( '*** Add links\n')
-    net.addLink(h1, r1)
+    net.addLink(h1, r1 intName2=)
     net.addLink(h2, r1)
 
     info( '*** Starting network\n')
