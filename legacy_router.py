@@ -18,7 +18,7 @@ def myNetwork():
     
     net = Mininet( topo=None,
                    build=False,
-                   ipBase='10.0.0.0/8')
+                   ipBase='192.168.1.1/24')
 
     info( '*** Adding controller\n' )
     info( '*** Add switches\n')
